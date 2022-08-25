@@ -1,0 +1,21 @@
+{
+	"name": "DeltaFiles",
+	"properties": {
+		"linkedServiceName": {
+			"referenceName": "ADLS_SQL",
+			"type": "LinkedServiceReference"
+		},
+		"annotations": [],
+		"type": "Parquet",
+		"typeProperties": {
+			"location": {
+				"type": "AzureBlobFSLocation",
+				"folderPath": "goldenlayer/dim/dimAddressType",
+				"fileSystem": "advrawdata"
+			},
+			"compressionCodec": "snappy"
+		},
+		"schema": []
+	},
+	"type": "Microsoft.DataFactory/factories/datasets"
+}

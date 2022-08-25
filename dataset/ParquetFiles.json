@@ -1,0 +1,24 @@
+{
+	"name": "ParquetFiles",
+	"properties": {
+		"linkedServiceName": {
+			"referenceName": "ADLS_SQL",
+			"type": "LinkedServiceReference"
+		},
+		"folder": {
+			"name": "AdventureWorks"
+		},
+		"annotations": [],
+		"type": "Parquet",
+		"typeProperties": {
+			"location": {
+				"type": "AzureBlobFSLocation",
+				"folderPath": "goldenlayer/dim/dimAddressType",
+				"fileSystem": "advrawdata"
+			},
+			"compressionCodec": "snappy"
+		},
+		"schema": []
+	},
+	"type": "Microsoft.DataFactory/factories/datasets"
+}

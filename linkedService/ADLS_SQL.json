@@ -1,0 +1,12 @@
+{
+	"name": "ADLS_SQL",
+	"type": "Microsoft.DataFactory/factories/linkedservices",
+	"properties": {
+		"annotations": [],
+		"type": "AzureBlobFS",
+		"typeProperties": {
+			"url": "https://databricksadlscanada.dfs.core.windows.net/",
+			"encryptedCredential": "ew0KICAiVmVyc2lvbiI6ICIyMDE3LTExLTMwIiwNCiAgIlByb3RlY3Rpb25Nb2RlIjogIktleSIsDQogICJTZWNyZXRDb250ZW50VHlwZSI6ICJQbGFpbnRleHQiLA0KICAiQ3JlZGVudGlhbElkIjogIkRBVEFGQUNUT1JZQDZFRUM5MzU2LTY5RjEtNEMzRC1CQzQ1LUM5RjZGMUVBMTdCM19hOTRhMzE3NC0xNTc4LTQzODgtYjhlMi04MzdiYTliYTZmNGIiDQp9"
+		}
+	}
+}

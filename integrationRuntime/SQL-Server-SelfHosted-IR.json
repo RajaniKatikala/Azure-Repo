@@ -1,0 +1,7 @@
+{
+	"name": "SQL-Server-SelfHosted-IR",
+	"properties": {
+		"type": "SelfHosted",
+		"description": "SQL Server OnPrem to ADF"
+	}
+}

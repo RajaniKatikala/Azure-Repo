@@ -1,0 +1,43 @@
+{
+	"name": "Execute Piplelines",
+	"properties": {
+		"activities": [
+			{
+				"name": "Copy Sql Tables To ADLS",
+				"type": "ExecutePipeline",
+				"dependsOn": [],
+				"userProperties": [],
+				"typeProperties": {
+					"pipeline": {
+						"referenceName": "AdventureWorksPipGetData",
+						"type": "PipelineReference"
+					},
+					"waitOnCompletion": true
+				}
+			},
+			{
+				"name": "Copy Delta Tables Back to SQL",
+				"type": "ExecutePipeline",
+				"dependsOn": [
+					{
+						"activity": "Copy Sql Tables To ADLS",
+						"dependencyConditions": [
+							"Succeeded"
+						]
+					}
+				],
+				"userProperties": [],
+				"typeProperties": {
+					"pipeline": {
+						"referenceName": "DeltaFilesToSQLServer",
+						"type": "PipelineReference"
+					},
+					"waitOnCompletion": true
+				}
+			}
+		],
+		"annotations": [],
+		"lastPublishTime": "2022-08-23T14:31:27Z"
+	},
+	"type": "Microsoft.DataFactory/factories/pipelines"
+}
