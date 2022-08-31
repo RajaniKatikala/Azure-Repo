@@ -5,11 +5,20 @@
 			"referenceName": "ADLS_SQL",
 			"type": "LinkedServiceReference"
 		},
+		"parameters": {
+			"FileName": {
+				"type": "string"
+			}
+		},
 		"annotations": [],
 		"type": "DelimitedText",
 		"typeProperties": {
 			"location": {
 				"type": "AzureBlobFSLocation",
+				"folderPath": {
+					"value": "@utcnow()",
+					"type": "Expression"
+				},
 				"fileSystem": "advrawdata"
 			},
 			"columnDelimiter": ",",
