@@ -60,7 +60,7 @@
 						"type": "DatasetReference",
 						"parameters": {
 							"FileName": {
-								"value": "@convertTimeZone(formatDateTime(utcNow(),'yyyy-MM-dd'),'UTC','Eastern Standard Time')",
+								"value": "@formatDateTime(convertTimeZone(utcNow(),'UTC','Eastern Standard Time'),'yyyy-MM-dd')",
 								"type": "Expression"
 							}
 						}
