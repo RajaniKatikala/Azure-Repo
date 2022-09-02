@@ -28,7 +28,16 @@
 				],
 				"userProperties": [],
 				"typeProperties": {
-					"waitOnCompletion": true
+					"pipeline": {
+						"referenceName": "DeltaFilesToSQLServer",
+						"type": "PipelineReference"
+					},
+					"waitOnCompletion": true,
+					"parameters": {
+						"Container": "advrawdata",
+						"Folder": "goldenlayer",
+						"SubFolder": "dim"
+					}
 				}
 			}
 		],
