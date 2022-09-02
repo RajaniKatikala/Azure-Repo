@@ -1,5 +1,5 @@
 {
-	"name": "DeltaFilesToSQLServer_copy2",
+	"name": "DeltaFilesToSQLServer",
 	"properties": {
 		"activities": [
 			{
