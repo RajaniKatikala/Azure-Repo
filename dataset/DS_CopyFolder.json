@@ -16,7 +16,7 @@
 			"location": {
 				"type": "AzureBlobFSLocation",
 				"folderPath": {
-					"value": "@convertTimeZone(utcNow(),'UTC','Eastern Standard Time')",
+					"value": "@convertTimeZone(formatDateTime(utcNow(),'yyyy-MM-dd'),'UTC','Eastern Standard Time')",
 					"type": "Expression"
 				},
 				"fileSystem": "advrawdata"
