@@ -17,7 +17,7 @@
 		"type": "SqlServerTable",
 		"schema": [],
 		"typeProperties": {
-			"schema": "dbo",
+			"schema": "adventure",
 			"table": {
 				"value": "@dataset().TableName",
 				"type": "Expression"

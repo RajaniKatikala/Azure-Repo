@@ -17,7 +17,17 @@
 				"typeProperties": {
 					"dataset": {
 						"referenceName": "ParquetFiles_copy1",
-						"type": "DatasetReference"
+						"type": "DatasetReference",
+						"parameters": {
+							"Folder": {
+								"value": "@concat(pipeline().parameters.Folder,'/',pipeline().parameters.SubFolder)",
+								"type": "Expression"
+							},
+							"container": {
+								"value": "@pipeline().parameters.Container",
+								"type": "Expression"
+							}
+						}
 					},
 					"fieldList": [
 						"childItems",
@@ -66,10 +76,11 @@
 									"storeSettings": {
 										"type": "AzureBlobFSReadSettings",
 										"recursive": true,
-										"wildcardFileName": {
-											"value": "@item().name",
+										"wildcardFolderPath": {
+											"value": "@concat(pipeline().parameters.Folder,'/',pipeline().parameters.SubFolder,'/',activity('Get Metadata1').output.itemName)",
 											"type": "Expression"
 										},
+										"wildcardFileName": "*.parquet",
 										"enablePartitionDiscovery": false
 									}
 								},
@@ -95,7 +106,15 @@
 									"type": "DatasetReference",
 									"parameters": {
 										"FileName": {
-											"value": "@item().name",
+											"value": "@activity('Get Metadata1').output.itemName",
+											"type": "Expression"
+										},
+										"Folder": {
+											"value": "@concat(pipeline().parameters.Folder,'/',pipeline().parameters.SubFolder)\n",
+											"type": "Expression"
+										},
+										"container": {
+											"value": "@pipeline().parameters.Container",
 											"type": "Expression"
 										}
 									}
@@ -118,6 +137,20 @@
 				}
 			}
 		],
+		"parameters": {
+			"Container": {
+				"type": "string",
+				"defaultValue": "advrawdata "
+			},
+			"Folder": {
+				"type": "string",
+				"defaultValue": "goldenlayer"
+			},
+			"SubFolder": {
+				"type": "string",
+				"defaultValue": "dim"
+			}
+		},
 		"annotations": [],
 		"lastPublishTime": "2022-08-25T14:24:52Z"
 	},
