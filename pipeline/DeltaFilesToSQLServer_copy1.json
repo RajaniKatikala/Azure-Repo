@@ -17,7 +17,21 @@
 				"typeProperties": {
 					"dataset": {
 						"referenceName": "ParquetFiles_copy1",
-						"type": "DatasetReference"
+						"type": "DatasetReference",
+						"parameters": {
+							"FileName": {
+								"value": "@pipeline().parameters.FileName",
+								"type": "Expression"
+							},
+							"Folder": {
+								"value": "@pipeline().parameters.Folder",
+								"type": "Expression"
+							},
+							"container": {
+								"value": "@pipeline().parameters.Container",
+								"type": "Expression"
+							}
+						}
 					},
 					"fieldList": [
 						"childItems"
@@ -154,6 +168,20 @@
 				}
 			}
 		],
+		"parameters": {
+			"Container": {
+				"type": "string",
+				"defaultValue": "advrawdata"
+			},
+			"Folder": {
+				"type": "string",
+				"defaultValue": "goldenlayer"
+			},
+			"FileName": {
+				"type": "string",
+				"defaultValue": "dim"
+			}
+		},
 		"annotations": [],
 		"lastPublishTime": "2022-08-25T14:56:14Z"
 	},

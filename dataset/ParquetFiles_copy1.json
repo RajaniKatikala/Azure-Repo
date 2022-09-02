@@ -5,6 +5,17 @@
 			"referenceName": "ADLS_SQL",
 			"type": "LinkedServiceReference"
 		},
+		"parameters": {
+			"FileName": {
+				"type": "string"
+			},
+			"Folder": {
+				"type": "string"
+			},
+			"container": {
+				"type": "string"
+			}
+		},
 		"folder": {
 			"name": "AdventureWorks"
 		},
@@ -13,8 +24,18 @@
 		"typeProperties": {
 			"location": {
 				"type": "AzureBlobFSLocation",
-				"folderPath": "goldenlayer/dim",
-				"fileSystem": "advrawdata"
+				"fileName": {
+					"value": "@dataset().FileName",
+					"type": "Expression"
+				},
+				"folderPath": {
+					"value": "@dataset().Folder",
+					"type": "Expression"
+				},
+				"fileSystem": {
+					"value": "@dataset().container",
+					"type": "Expression"
+				}
 			},
 			"compressionCodec": "snappy"
 		},
