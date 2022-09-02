@@ -77,7 +77,7 @@
 										"type": "AzureBlobFSReadSettings",
 										"recursive": true,
 										"wildcardFolderPath": {
-											"value": "@concat(pipeline().parameters.Folder,'/',pipeline().parameters.SubFolder,'/',activity('Get Metadata1').output.itemName)",
+											"value": "@concat(pipeline().parameters.Folder,'/',pipeline().parameters.SubFolder,'/',string(activity('Get Metadata1').output.childItems))",
 											"type": "Expression"
 										},
 										"wildcardFileName": "*.parquet",
@@ -106,7 +106,7 @@
 									"type": "DatasetReference",
 									"parameters": {
 										"FileName": {
-											"value": "@activity('Get Metadata1').output.itemName",
+											"value": "@activity('Get Metadata1').output.childItems",
 											"type": "Expression"
 										},
 										"Folder": {
