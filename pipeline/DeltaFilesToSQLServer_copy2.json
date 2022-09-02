@@ -140,7 +140,7 @@
 		"parameters": {
 			"Container": {
 				"type": "string",
-				"defaultValue": "advrawdata "
+				"defaultValue": "advrawdata"
 			},
 			"Folder": {
 				"type": "string",
