@@ -41,7 +41,7 @@
 				}
 			},
 			{
-				"name": "GetParquetFiles",
+				"name": "GetDimFiles",
 				"type": "ForEach",
 				"dependsOn": [
 					{
